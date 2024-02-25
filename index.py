@@ -11,8 +11,10 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'raw'}
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 @app.route('/api/upload', methods=['GET', 'POST'])
 def upload_file():
@@ -47,9 +49,11 @@ def upload_file():
 def download_file(name):
     return send_from_directory(app.config["UPLOAD_FOLDER"], name)
 
+
 @app.route("/")
 def hello_world():
     return "<p>Hello, World!</p>"
+
 
 @app.route("/api/garbage")
 def me_api():
@@ -58,6 +62,7 @@ def me_api():
         "username": "user.username",
         "theme": "user.theme",
     }
+
 
 @app.route("/api/send", methods=["POST", "OPTIONS"])
 def send():
