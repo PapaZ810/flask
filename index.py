@@ -7,7 +7,7 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 cors = CORS(app, resources=r'/api/*')
 UPLOAD_FOLDER = 'images'
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'raw'}
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'raw', 'txt'}
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
